@@ -10,7 +10,7 @@ listEl.classList.add("gallery");
 const markup = galleryItems
   .map(
     ({ preview, original, description }) =>
-      `<li class="gallery__item><a class="gallery__link><img loading="lazy" class="gallery__image" data-src=${original} src=${preview} alt=${description}></a></li>`
+      `<li class="gallery__item"><a class="gallery__link"><img loading="lazy" class="gallery__image" data-src=${original} src=${preview} alt=${description}></a></li>`
   )
   .join("");
 listEl.insertAdjacentHTML("afterbegin", markup);
