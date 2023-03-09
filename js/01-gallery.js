@@ -29,12 +29,14 @@ function largeImg(event) {
 
   instance.show();
 
-  document.addEventListener("keydown", (event) => {
+  document.addEventListener("keydown", handleOutBackdrop);
+
+  function handleOutBackdrop(event) {
     if (event.key === "Escape" || event.key === " " || event.key === "Enter") {
       instance.close();
     }
-  });
+    if (!basicLightbox.visible()) {
+      document.removeEventListener("keydown", handleOutBackdrop);
+    }
+  }
 }
-// if (!basicLightbox.visible()) {
-//   document.removeEventListener("keydown", event);
-// }
